@@ -51,19 +51,23 @@ final class SearchPresenter: ObservableObject {
 
   init(dependency: Dependency) {
     self.dependency = dependency
+    self.sinkQuery()
+  }
 
+  private func sinkQuery() {
     self.$query
       .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
       .sink(receiveValue: { [weak self] query in
+        guard let self = self else { return }
 
         if query.isEmpty {
-          self?.isRecommend = true
-          self?.reload(query: "swift")
+          self.isRecommend = true
+          self.reload(query: "swift")
           return
         }
 
-        self?.isRecommend = false
-        self?.reload(query: query)
+        self.isRecommend = false
+        self.reload(query: query)
       })
       .store(in: &self.cancellables)
   }
