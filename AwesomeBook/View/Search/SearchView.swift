@@ -15,14 +15,6 @@ struct SearchView: View {
   @ObservedObject
   var presenter: SearchPresenter
 
-  var header: some View {
-    SearchHeaderView(
-      text: self.$presenter.query,
-      isRecommend: self.$presenter.isRecommend,
-      resultDescription: self.$presenter.resultDescription
-    )
-  }
-
   var body: some View {
     NavigationView {
       ZStack {
@@ -39,7 +31,13 @@ struct SearchView: View {
         alignment: .leading,
         pinnedViews: .sectionHeaders,
         content: {
-          Section(header: header) {
+          Section(
+            header: SearchHeaderView(
+              text: self.$presenter.query,
+              isRecommend: self.$presenter.isRecommend,
+              resultDescription: self.$presenter.resultDescription
+            )
+          ) {
             ForEach(
               self.presenter.items,
               id: \.id
