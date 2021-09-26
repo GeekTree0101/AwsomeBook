@@ -11,12 +11,6 @@ import SwiftUI
 
 final class SearchPresenter: ObservableObject {
 
-  enum LoadingStatus {
-    case reload
-    case next
-    case end
-  }
-
   struct Dependency {
     let bookRepository: BookRepository
     let bookSearchService: BookSearchService
