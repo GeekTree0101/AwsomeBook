@@ -46,6 +46,9 @@ private class SearchDependencyf947dc409bd44ace18e0BaseProvider: SearchDependency
     var bookRepository: BookRepository {
         return rootComponent.bookRepository
     }
+    var router: RouterLogic {
+        return rootComponent.router
+    }
     private let rootComponent: RootComponent
     init(rootComponent: RootComponent) {
         self.rootComponent = rootComponent

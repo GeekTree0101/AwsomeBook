@@ -16,11 +16,15 @@ final class RootComponent: BootstrapComponent {
   }
 
   var bookSearchService: BookSearchService {
-    shared { BookSearchServiceImpl() }
+    return shared { BookSearchServiceImpl() }
   }
 
   var bookRepository: BookRepository {
-    shared { BookRepositoryImpl() }
+    return shared { BookRepositoryImpl() }
+  }
+
+  var router: RouterLogic {
+    return shared { Router() }
   }
 
   var searchBuilder: SearchBuilder {

@@ -15,6 +15,7 @@ final class SearchPresenter: ObservableObject {
     let bookRepository: BookRepository
     let bookSearchService: BookSearchService
     let bookDetailBuilder: BookDetailBuilder!
+    let router: RouterLogic
   }
 
   @Published
@@ -152,11 +153,14 @@ final class SearchPresenter: ObservableObject {
       .store(in: &self.cancellables)
   }
 
-  func bookDetailView(_ id: String) -> BookDetailView {
-    return self.dependency.bookDetailBuilder.bookDetailView(
-      BookDetailPayload(
-        id: id
-      )
+  func pushBookDetailView(_ id: String) {
+    
+    self.dependency.router.pushView(
+      self.dependency.bookDetailBuilder.bookDetailView(
+        BookDetailPayload(id: id
+        )
+      ),
+      animated: true
     )
   }
 }

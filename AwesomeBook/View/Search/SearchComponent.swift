@@ -13,6 +13,7 @@ protocol SearchDependency: Dependency {
 
   var bookSearchService: BookSearchService { get }
   var bookRepository: BookRepository { get }
+  var router: RouterLogic { get }
 }
 
 protocol SearchBuilder {
@@ -27,7 +28,8 @@ final class SearchComponent: Component<SearchDependency>, SearchBuilder {
         dependency: SearchPresenter.Dependency(
           bookRepository: self.bookRepository,
           bookSearchService: self.bookSearchService,
-          bookDetailBuilder: self.bookDetailBuilder
+          bookDetailBuilder: self.bookDetailBuilder,
+          router: self.router
         )
       )
     )

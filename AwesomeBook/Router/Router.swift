@@ -6,12 +6,20 @@
 //
 
 import UIKit
-import Combine
 import SwiftUI
 
-final class Router: ObservableObject {
+protocol RouterLogic: AnyObject {
 
-  weak var application: UIApplication?
+  func registerApplication(_ application: UIApplication?)
+  func present<Content: View>(_ view: Content, animated: Bool)
+  func pushView<Content: View>(_ view: Content, animated: Bool)
+  func dismiss(animated: Bool, completion: (() -> Void)?)
+  func pop(animated: Bool)
+}
+
+final class Router: RouterLogic {
+
+  private weak var application: UIApplication?
   private var window: UIWindow? {
     guard let scene = self.application?.connectedScenes.first,
           let windowSceneDelegate = scene.delegate as? UIWindowSceneDelegate,
@@ -21,6 +29,9 @@ final class Router: ObservableObject {
     return window
   }
 
+  func registerApplication(_ application: UIApplication?) {
+    self.application = application
+  }
 }
 
 // MARK: - present
@@ -29,7 +40,7 @@ extension Router {
 
   func present<Content: View>(_ view: Content, animated: Bool = true) {
     self.present(
-      RouterHostingController(rootView: view.environmentObject(self)),
+      RouterHostingController(rootView: view),
       animated: animated
     )
   }
@@ -72,7 +83,7 @@ extension Router {
 extension Router {
 
   func pushView<Content: View>(_ view: Content, animated: Bool = true) {
-    let controller = RouterHostingController(rootView: view.environmentObject(self))
+    let controller = RouterHostingController(rootView: view)
     self.pushViewController(controller, animated: animated)
   }
 

@@ -19,7 +19,6 @@ struct AwesomeBookApp: App {
   var body: some Scene {
     WindowGroup {
       self.appDelegate.rootComponent.rootView
-        .environmentObject(self.appDelegate.router)
     }
   }
 

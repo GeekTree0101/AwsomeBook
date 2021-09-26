@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct SearchView: View {
-
-  @EnvironmentObject
-  var router: Router
   
   @ObservedObject
   var presenter: SearchPresenter
@@ -45,11 +42,7 @@ struct SearchView: View {
               SearchResultView(
                 viewModel: viewModel
               ).onSelect { () in
-                self.router.pushView(
-                  self.presenter.bookDetailView(
-                    viewModel.id
-                  )
-                )
+                self.presenter.pushBookDetailView(viewModel.id)
               }
             }
           }
@@ -74,7 +67,8 @@ struct SearchView_Previews: PreviewProvider {
         dependency: SearchPresenter.Dependency(
           bookRepository: BookRepositoryImpl(),
           bookSearchService: BookSearchServiceImpl(),
-          bookDetailBuilder: nil
+          bookDetailBuilder: nil,
+          router: Router()
         )
       )
     )

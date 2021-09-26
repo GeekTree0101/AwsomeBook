@@ -14,7 +14,6 @@ import CodyFire
 final class AwesomeBookAppDelegate: NSObject, UIApplicationDelegate {
   
   let rootComponent: RootComponent
-  let router = Router()
 
   override init() {
     registerProviderFactories()
@@ -25,7 +24,7 @@ final class AwesomeBookAppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     self.rootComponent.networking.configure()
-    self.router.application = application
+    self.rootComponent.router.registerApplication(application)
     return true
   }
 }
