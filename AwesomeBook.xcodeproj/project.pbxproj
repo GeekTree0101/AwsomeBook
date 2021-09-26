@@ -11,7 +11,6 @@
 		DA83C77D26FE179E0099E74B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA83C77C26FE179E0099E74B /* Preview Assets.xcassets */; };
 		DA83C78826FE179E0099E74B /* AwesomeBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83C78726FE179E0099E74B /* AwesomeBookTests.swift */; };
 		DA83C79326FE179E0099E74B /* AwesomeBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83C79226FE179E0099E74B /* AwesomeBookUITests.swift */; };
-		DA83C7A226FE17C90099E74B /* SwiftUIRouter in Frameworks */ = {isa = PBXBuildFile; productRef = DA83C7A126FE17C90099E74B /* SwiftUIRouter */; };
 		DA83C7A526FE18B90099E74B /* CodyFire in Frameworks */ = {isa = PBXBuildFile; productRef = DA83C7A426FE18B90099E74B /* CodyFire */; };
 		DA83C7AF26FE19050099E74B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83C7AE26FE19050099E74B /* SearchView.swift */; };
 		DA83C7B226FE1A840099E74B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83C7B126FE1A840099E74B /* SearchBar.swift */; };
@@ -112,7 +111,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA83C7B726FEE4140099E74B /* SDWebImageSwiftUI in Frameworks */,
-				DA83C7A226FE17C90099E74B /* SwiftUIRouter in Frameworks */,
 				DA83C7A526FE18B90099E74B /* CodyFire in Frameworks */,
 				DA83C7C726FEF1DA0099E74B /* Then in Frameworks */,
 				DA83C7D526FEFF5F0099E74B /* NeedleFoundation in Frameworks */,
@@ -351,7 +349,6 @@
 			);
 			name = AwesomeBook;
 			packageProductDependencies = (
-				DA83C7A126FE17C90099E74B /* SwiftUIRouter */,
 				DA83C7A426FE18B90099E74B /* CodyFire */,
 				DA83C7B626FEE4140099E74B /* SDWebImageSwiftUI */,
 				DA83C7C626FEF1DA0099E74B /* Then */,
@@ -429,7 +426,6 @@
 			);
 			mainGroup = DA83C76926FE179D0099E74B;
 			packageReferences = (
-				DA83C7A026FE17C90099E74B /* XCRemoteSwiftPackageReference "SwiftUIRouter" */,
 				DA83C7A326FE18B90099E74B /* XCRemoteSwiftPackageReference "CodyFire" */,
 				DA83C7B526FEE4140099E74B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				DA83C7C526FEF1DA0099E74B /* XCRemoteSwiftPackageReference "Then" */,
@@ -848,14 +844,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DA83C7A026FE17C90099E74B /* XCRemoteSwiftPackageReference "SwiftUIRouter" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:frzi/SwiftUIRouter.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
-			};
-		};
 		DA83C7A326FE18B90099E74B /* XCRemoteSwiftPackageReference "CodyFire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:CodyFlame/CodyFire.git";
@@ -891,11 +879,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DA83C7A126FE17C90099E74B /* SwiftUIRouter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DA83C7A026FE17C90099E74B /* XCRemoteSwiftPackageReference "SwiftUIRouter" */;
-			productName = SwiftUIRouter;
-		};
 		DA83C7A426FE18B90099E74B /* CodyFire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DA83C7A326FE18B90099E74B /* XCRemoteSwiftPackageReference "CodyFire" */;
