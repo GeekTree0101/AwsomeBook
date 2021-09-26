@@ -39,22 +39,24 @@ final class BookDetailPresenter: ObservableObject {
     self.dependency.bookRepository.getByID(self.id)
       .sink(
         receiveCompletion: { [weak self] res in
+          guard let self = self else { return }
           switch res {
           case .failure:
-            self?.isNotFounded = true
+            self.isNotFounded = true
           case .finished:
             break
           }
         },
         receiveValue: { [weak self] book in
-          self?.contentViewModel = .init(
+          guard let self = self else { return }
+          self.contentViewModel = .init(
             title: book.title,
             subtitle: book.subtitle,
             authors: book.authors,
             desc: book.desc,
             image: book.image
           )
-          self?.isNotFounded = false
+          self.isNotFounded = false
         }
       )
       .store(in: &self.cancellables)
