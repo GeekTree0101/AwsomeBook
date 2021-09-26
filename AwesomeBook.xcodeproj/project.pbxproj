@@ -44,6 +44,7 @@
 		DA83C7F72700A3240099E74B /* AwesomeBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83C7F62700A3240099E74B /* AwesomeBookApp.swift */; };
 		DA83C7F92700A45A0099E74B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83C7F82700A45A0099E74B /* AppDelegate.swift */; };
 		DA83C7FB2700AA290099E74B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83C7FA2700AA290099E74B /* Networking.swift */; };
+		DA83C8002700B2580099E74B /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83C7FF2700B2580099E74B /* SearchHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		DA83C7F62700A3240099E74B /* AwesomeBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeBookApp.swift; sourceTree = "<group>"; };
 		DA83C7F82700A45A0099E74B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA83C7FA2700AA290099E74B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		DA83C7FF2700B2580099E74B /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				DA83C7B326FE1F370099E74B /* SearchResultView.swift */,
+				DA83C7FF2700B2580099E74B /* SearchHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				DA83C7C126FEEFF90099E74B /* BookAPI.swift in Sources */,
 				DA83C7F72700A3240099E74B /* AwesomeBookApp.swift in Sources */,
 				DA83C7D926FEFFC10099E74B /* NeedleGenerated.swift in Sources */,
+				DA83C8002700B2580099E74B /* SearchHeaderView.swift in Sources */,
 				DA83C7DD26FF01F70099E74B /* DismissingKeyboard.swift in Sources */,
 				DA83C7D226FEF8A50099E74B /* SearchPresenter.swift in Sources */,
 				DA83C7E9270036060099E74B /* BookDetailView.swift in Sources */,
